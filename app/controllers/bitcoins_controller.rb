@@ -18,7 +18,7 @@ class BitcoinsController < ApplicationController
     @usd_rate = bitcoin_data["USD"]["last"]
 
     # calculate value in USD of user's bitcoin
-    @bitcoin = 1.0
+    @bitcoin = params["amount"].to_f
     @usd_value = @usd_rate * @bitcoin
 
     # render bitcoins/index view
